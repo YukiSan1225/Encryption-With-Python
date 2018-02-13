@@ -16,7 +16,7 @@ from fileReader import main
 
 def encode():
     print "\nWould you like to read from a file or input the text? Enter 'file' or 'text'\n"
-    textR = raw_input("")
+    textR = input("")
     # Reading the file
     if textR == "file":
         fileReader.main()
@@ -24,7 +24,7 @@ def encode():
     # Inputting text into program
     elif textR == "text":
         print "\nPlease enter the text you'd like to encode?\n"
-        textR = raw_input("")
+        textR = input("")
 
     # Error control
     else:
@@ -35,13 +35,13 @@ def encode():
     print "\t1. SHA256\n\t2. Affine\n\t3. AES\n\t4. Caesar Cipher"
     print "Enter the number to define which encryption you'd like."
 
-    numberCrypto = raw_input("")
+    numberCrypto = input("")
 
     # Encoding of SHA256
     if numberCrypto == '1':
         # Encoding of SHA256
         sha256 = SHA256.new(textR)
-        print sha256.hexdigest()
+        print(sha256.hexdigest())
         exit()
 
     elif numberCrypto == '2':
@@ -59,7 +59,7 @@ def encode():
 
         enc = pad(textR)
         cipher = AES.new(textR, AES.MODE_ECB)
-        print b64encode(cipher.encrypt(enc))
+        print(b64encode(cipher.encrypt(enc)))
         exit()
 
     # Encoding of Caesar Cipher
@@ -71,16 +71,16 @@ def decode():
     print "Work in progress"
 
 def main():
-    print "\nCrypto Decoder and Encoder. (C) Damien Burks 2018"
-    print "Before we get started, would you like to encode or decode?"
-    choice = raw_input("")
+    print ("\nCrypto Decoder and Encoder. (C) Damien Burks 2018")
+    print ("Before we get started, would you like to encode or decode?")
+    choice = input("")
 
     if choice == "encode":
         encode()
     elif choice == "decode":
         decode()
     else:
-        print "I'm sorry, I didn't get that. Please try again."
+        print ("I'm sorry, I didn't get that. Please try again.")
         main()
 
 if __name__ == '__main__':
