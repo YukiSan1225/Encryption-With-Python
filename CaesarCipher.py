@@ -1,4 +1,5 @@
 ## This is the implementation of Caesar Cipher
+import string
 
 def inputandEncode():
     print "You need a key to base your encryption off of. Enter a key below: "
@@ -8,6 +9,7 @@ def inputandEncode():
     alphaNumerals = 'abcdefghijklmnopqrstuvwxyz'
     cipher = ''
 
+    key = string.lower(key)
     # Encryption
     for n in key:
         if n in alphaNumerals:

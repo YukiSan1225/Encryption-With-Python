@@ -1,4 +1,5 @@
 ## Reading a file in Python for Crypto_Decoder&Encoder
+## This will end up taking a minute first.
 # Import Statements
 import os
 import future_builtins
@@ -20,7 +21,6 @@ def main():
     # Reading the file contents
     file = open(i)
     contents = file.read()
-    info = contents
 
 if __name__ == '__main__':
     main()

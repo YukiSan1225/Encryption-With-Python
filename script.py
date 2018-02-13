@@ -11,7 +11,7 @@ from Crypto.Cipher import *
 from Crypto.Hash import *
 
 # from twofish import TwoFish
-import youngCaesar, fileReader
+import CaesarCipher, fileReader, AffineCipher
 from fileReader import main
 
 def encode():
@@ -32,7 +32,7 @@ def encode():
         encode()
 
     print "Listed below are the type of encryptions that you can obtain:"
-    print "\t1. SHA256\n\t2. RSA\n\t3. AES\n\t4. Blowfish\n\t5. Twofish\n "
+    print "\t1. SHA256\n\t2. Affine\n\t3. AES\n\t4. Caesar Cipher"
     print "Enter the number to define which encryption you'd like."
 
     numberCrypto = raw_input("")
@@ -45,10 +45,8 @@ def encode():
         exit()
 
     elif numberCrypto == '2':
-        # Encoding of RSA
-        print "Work in progress"
-        exit() #Can not read RSA encryption humans that is
-
+        # Encoding of Affine Cipher
+        exit()
     # Encoding of AES; Will redo the coding base
     elif numberCrypto == '3':
         #Lambda Function
@@ -64,22 +62,9 @@ def encode():
         print b64encode(cipher.encrypt(enc))
         exit()
 
-    # Encoding of Blowfish, it is broken/ Do not do this.
-    elif numberCrypto == '4':
-        print "Work in progress"
-        # blowCip = Blowfish.new("This is the encrypted text for blowfish.", Blowfish.MODE_CTR)
-        # cipher = blowCip.encrypt(textR)
-        # print cipher
-        exit()
-
-    # Encoding of Twofish
-    elif numberCrypto == '5':
-        print "A work in progress."
-        exit()
-
     # Encoding of Caesar Cipher
-    elif numberCrypto == '6':
-        youngCaesar.inputandEncode()
+    elif numberCrypto == '4':
+        CaesarCipher.inputandEncode()
         exit()
 
 def decode():
